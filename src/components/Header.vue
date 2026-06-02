@@ -54,13 +54,10 @@ const toggleMenu = () => {
 
 <style scoped>
 .header {
-  min-height: 85vh;
-  border-bottom-left-radius: 10rem;
-  border-bottom-right-radius: 10rem;
-  background:
-    linear-gradient(rgba(59, 55, 53, 0.5), rgba(59, 55, 53, 0.5)) center center /
-      cover,
-    url("/Images/header-bg.webp") center center / cover;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
 }
 .nav {
   display: flex;

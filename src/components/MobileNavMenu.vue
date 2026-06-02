@@ -32,7 +32,7 @@ const toggleMobileMenu = () => {
 .nav-menu {
   top: 0;
   bottom: 0;
-  z-index: 2;
+  //z-index: 99;
   width: 25rem;
   position: fixed;
   backdrop-filter: blur(12px);
@@ -69,7 +69,7 @@ const toggleMobileMenu = () => {
 
 @media (min-width: 380px) {
   .nav-menu {
-    width: 26.5rem;
+    //width: 26.5rem;
   }
 }
 

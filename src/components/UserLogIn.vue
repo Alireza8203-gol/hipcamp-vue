@@ -2,7 +2,7 @@
   <div :class="`nav__links ${isDesktop ? 'hidden' : ''}`">
     <RouterLink class="nav__link" to="/log-in">Sign Up</RouterLink>
     <RouterLink class="nav__link nav__link--border" to="/log-in">
-      Sign Up
+      Sign In
     </RouterLink>
   </div>
 </template>
@@ -48,12 +48,18 @@ console.log(props.isDesktop);
   display: none;
 }
 
+@media (min-width: 768px) {
+}
 @media (min-width: 992px) {
   .nav__links {
     display: flex;
     flex-flow: row;
   }
   .nav__link {
+    margin-top: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-right: 0;
     margin-left: 3rem;
     color: var(--white);
     font-family: var(--primary-font-md), sans-serif;

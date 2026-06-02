@@ -235,3 +235,19 @@ body {
 a {
   text-decoration: none;
 }
+
+.btn {
+  height: 5vh;
+  display: flex;
+  font-size: 2vh;
+  max-width: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white);
+  align-items: center;
+  border-radius: 10rem;
+  justify-content: center;
+  background-color: var(--text--dark);
+  font-family: var(--primary-font-md), sans-serif;
+  /* border: .2rem solid var(--orange); */
+}
