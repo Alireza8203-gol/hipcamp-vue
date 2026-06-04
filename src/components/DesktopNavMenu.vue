@@ -1,4 +1,5 @@
 <template>
+  <!--  TODO: make a gradient background for when user scrolls so the text is readable -->
   <ul class="menu">
     <MenuItem v-for="item in menuItemNames" :key="item.id" :item="item" />
   </ul>

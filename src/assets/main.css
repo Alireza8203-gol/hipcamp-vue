@@ -152,11 +152,11 @@ table {
 /* GRID SYSTEM */
 .container {
   width: 100%;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 576px) {

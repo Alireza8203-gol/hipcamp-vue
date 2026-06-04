@@ -32,7 +32,7 @@ const toggleMobileMenu = () => {
 .nav-menu {
   top: 0;
   bottom: 0;
-  //z-index: 99;
+  z-index: 99;
   width: 25rem;
   position: fixed;
   backdrop-filter: blur(12px);

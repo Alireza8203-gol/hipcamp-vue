@@ -60,7 +60,7 @@ const isActive = computed(() => route.path === props.item.path);
     margin-right: 1.5rem;
   }
   .menu__link {
-    color: var(--light-grey);
+    color: var(--white);
   }
   .menu__link--active {
     color: var(--white);

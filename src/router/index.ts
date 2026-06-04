@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import("../views/Destinations.vue"),
     },
     {
+      path: "/destinations/:title",
+      name: "place",
+      component: () => import("../views/Place.vue"),
+    },
+    {
       path: "/near-me",
       name: "Near Me",
       component: HomeView,
