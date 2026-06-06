@@ -6,9 +6,9 @@
         :src="`/Images/image${placeInfo.img}.webp`"
         class="place__img"
       />
-      <div class="place__like">
+      <div class="place__like" @click="toggleLike">
         <svg
-          class="place__like-icon"
+          :class="['place__like-icon', { 'place__like-icon--filled': isLiked }]"
           fill="#fff"
           height="24.037"
           stroke="#E76F51"
@@ -40,6 +40,9 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
+
+const isLiked = ref(false);
 const props = defineProps<{
   placeInfo: {
     id: number;
@@ -49,6 +52,10 @@ const props = defineProps<{
     caption: string;
   };
 }>();
+
+const toggleLike = () => {
+  isLiked.value = !isLiked.value;
+};
 </script>
 
 <style scoped>
@@ -81,6 +88,7 @@ const props = defineProps<{
   align-items: center;
   border-radius: 1.3rem;
   justify-content: center;
+  background-color: var(--white);
 }
 .place__like-icon {
   stroke-width: 2px;
@@ -116,6 +124,7 @@ const props = defineProps<{
 .place__caption {
   max-width: 28rem;
   margin: 0 auto 2.5rem;
+  font-family: var(--primary-font), serif;
 }
 .place__link {
   font-size: 1.8rem;
