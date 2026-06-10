@@ -54,6 +54,18 @@ const router = createRouter({
       component: () => import("../views/404.vue"),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.path === "/destinations") {
+      return {
+        top: 0,
+        behavior: "smooth",
+      };
+    }
+    return false;
+  },
 });
 
 export default router;

@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <a href="" @click.prevent="scrollToTop">
+      <a class="footer__scroll" href="#" @click.prevent="scrollToTop">
         <svg
           fill="#E76F51"
           height="22.175"
@@ -31,14 +31,31 @@
               and more.
             </p>
           </div>
-          <div class="footer-pages-wrapper">
-            <FooterPages
-              v-for="footerInfo in footerListInfo"
-              :key="footerInfo.id"
-              :list-items-info-arr="footerInfo.menuItems"
-              :title="footerInfo.title"
+        </div>
+        <div class="footer-pages-wrapper">
+          <FooterPages
+            v-for="footerInfo in footerListInfo"
+            :key="footerInfo.id"
+            :list-items-info-arr="footerInfo.menuItems"
+            :title="footerInfo.title"
+          />
+        </div>
+        <div class="footer-app">
+          <h3 class="footer__title">Download Our App</h3>
+          <a class="footer-app__link" href="#">
+            <img
+              alt="Download-app-app-store"
+              class="footer-app__img"
+              src="/Images/app-store-apple.webp"
             />
-          </div>
+          </a>
+          <a class="footer-app__link" href="">
+            <img
+              alt="Download-app-google-play-store"
+              class="footer-app__img"
+              src="/Images/google-play.webp"
+            />
+          </a>
         </div>
       </div>
       <p class="footer__copy-right">© 2020. All rights reserved.</p>

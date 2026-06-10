@@ -6,7 +6,7 @@
         Book unique camping experiences on over 300,000 campsites, cabins, RV
         parks, public parks and more.
       </p>
-      <RouterLink class="hero-content__link btn" to="/">Discover</RouterLink>
+      <a class="hero-content__link btn" href="#destinations">Discover</a>
     </div>
   </div>
 </template>
@@ -22,8 +22,8 @@
   border-bottom-left-radius: 10rem;
   border-bottom-right-radius: 10rem;
   background:
-    linear-gradient(rgba(59, 55, 53, 0.5), rgba(59, 55, 53, 0.5)) center center /
-      cover,
+    linear-gradient(rgba(59, 55, 53, 0.5), rgba(59, 55, 53, 0.5)) center
+      center / cover,
     url("/Images/hero-bg.webp") center center / cover;
 }
 .hero-content {

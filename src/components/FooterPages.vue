@@ -1,6 +1,6 @@
 <template>
   <div class="footer-list">
-    <h3 class="footer__title">Get to Know Us</h3>
+    <h3 class="footer__title">{{ title }}</h3>
     <ul class="footer-pages">
       <li
         v-for="item in listItemsInfoArr"

@@ -1,5 +1,5 @@
 <template>
-  <section class="destinations">
+  <section id="destinations" class="destinations">
     <img
       alt="destinations"
       class="destinations__logo"
@@ -24,9 +24,20 @@ import { computed } from "vue";
 import { places } from "@/data/places.ts";
 import DestinationCard from "@/components/DestinationCard.vue";
 
-const sliceValue = 12;
+const props = withDefaults(
+  defineProps<{
+    numberOfDestinations?: number;
+  }>(),
+  {
+    numberOfDestinations: 0,
+  },
+);
 const visiblePlaces = computed(() => {
-  return places.slice(0, sliceValue);
+  if (props.numberOfDestinations > 0) {
+    return places.slice(0, props.numberOfDestinations);
+  } else {
+    return places;
+  }
 });
 </script>
 
