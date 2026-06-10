@@ -1,7 +1,12 @@
 <template>
   <div :class="`nav-menu ${isMenuOpen ? 'show-menu' : 'hide-menu'}`">
     <ul class="mobile-menu">
-      <MenuItem v-for="item in menuItemNames" :key="item.id" :item="item" />
+      <MenuItem
+        v-for="item in menuItemNames"
+        :key="item.id"
+        :item="item"
+        @click="toggleMobileMenu"
+      />
     </ul>
     <UserLogIn />
   </div>

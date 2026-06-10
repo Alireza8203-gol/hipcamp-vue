@@ -1,11 +1,13 @@
 <template>
   <div class="place">
     <div class="place__banner">
-      <img
-        :alt="placeInfo.title"
-        :src="`/Images/image${placeInfo.img}.webp`"
-        class="place__img"
-      />
+      <RouterLink :to="`/destinations/${placeInfo.title}`">
+        <img
+          :alt="placeInfo.title"
+          :src="`/Images/image${placeInfo.img}.webp`"
+          class="place__img"
+        />
+      </RouterLink>
       <div class="place__like" @click="toggleLike">
         <svg
           :class="['place__like-icon', { 'place__like-icon--filled': isLiked }]"
@@ -28,7 +30,9 @@
         <p class="place__price-text">${{ placeInfo.price }}/night</p>
       </div>
     </div>
-    <h3 class="place__title">{{ placeInfo.title }}</h3>
+    <RouterLink :to="`/destinations/${placeInfo.title}`">
+      <h3 class="place__title">{{ placeInfo.title }}</h3>
+    </RouterLink>
     <p class="place__caption">{{ placeInfo.caption }}</p>
     <RouterLink
       :to="`/destinations/${placeInfo.title}`"

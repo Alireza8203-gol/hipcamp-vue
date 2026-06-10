@@ -12,59 +12,52 @@ const router = createRouter({
     {
       path: "/destinations",
       name: "Destinations",
-      component: () => import("../views/Destinations.vue"),
+      component: () => import("../views/DestinationsView.vue"),
     },
     {
       path: "/destinations/:title",
       name: "place",
-      component: () => import("../views/Place.vue"),
+      component: () => import("../views/PlaceView.vue"),
     },
     {
       path: "/near-me",
       name: "Near Me",
-      component: HomeView,
+      component: () => import("../views/NearMeView.vue"),
     },
-    {
-      path: "/events",
-      name: "Events",
-      component: HomeView,
-    },
-    {
-      path: "/blog",
-      name: "Blog",
-      component: HomeView,
-    },
-    {
-      path: "/gallery",
-      name: "Gallery",
-      component: HomeView,
-    },
-    {
-      path: "/about",
-      name: "About",
-      component: HomeView,
-    },
-    {
-      path: "/contact",
-      name: "Contact Us",
-      component: HomeView,
-    },
+    // {
+    //   path: "/events",
+    //   name: "Events",
+    //   component: () => import("../views/EventView.vue"),
+    // },
+    // {
+    //   path: "/blog",
+    //   name: "Blog",
+    //   component: () => import("../views/BlogView.vue"),
+    // },
+    // {
+    //   path: "/gallery",
+    //   name: "Gallery",
+    //   component: () => import("../views/GalleryView.vue"),
+    // },
+    // {
+    //   path: "/about",
+    //   name: "About",
+    //   component: () => import("../views/AboutView.vue"),
+    // },
+    // {
+    //   path: "/contact",
+    //   name: "Contact Us",
+    //   component: () => import("../views/ContactUsView.vue"),
+    // },
     {
       path: "/:pathMatch(.*)*",
       component: () => import("../views/404.vue"),
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition;
-    }
-    if (to.path === "/destinations") {
-      return {
-        top: 0,
-        behavior: "smooth",
-      };
-    }
-    return false;
+  scrollBehavior() {
+    return {
+      top: 0,
+    };
   },
 });
 

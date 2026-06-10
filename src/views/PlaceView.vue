@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>this is the place: {{ router.params.title }}</h1>
   </div>
 </template>

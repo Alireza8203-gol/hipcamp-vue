@@ -1,6 +1,6 @@
 <template>
-  <Hero />
   <main class="main">
+    <Hero />
     <div class="container">
       <ServicesSection />
       <DestinationsSection :number-of-destinations="12" />
