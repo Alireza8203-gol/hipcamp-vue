@@ -2,7 +2,13 @@
   <li class="menu__item">
     <RouterLink
       :id="`${item.id}`"
-      :class="['menu__link', { 'menu__link--active': isActive }]"
+      :class="[
+        'menu__link',
+        {
+          'menu__link--active': isActive,
+          'menu__item--inaccessible': !item.doesWork,
+        },
+      ]"
       :to="item.path"
       >{{ item.label }}
     </RouterLink>
@@ -15,7 +21,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const props = defineProps<{
-  item: { id: number; label: string; path: string };
+  item: { id: number; label: string; path: string; doesWork: boolean };
 }>();
 const isActive = computed(() => route.path === props.item.path);
 </script>
@@ -24,6 +30,11 @@ const isActive = computed(() => route.path === props.item.path);
 .menu__item {
   margin-bottom: 2rem;
   margin-right: 1.5rem;
+}
+.menu__item--inaccessible {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--dark-grey) !important;
 }
 .menu__link {
   color: var(--text--dark);

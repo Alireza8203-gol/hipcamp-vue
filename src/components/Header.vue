@@ -37,14 +37,14 @@ import DesktopNavMenu from "@/components/DesktopNavMenu.vue";
 
 const isMenuOpen = ref(false);
 const menuItemsNames = [
-  { id: 1, label: "Home", path: "/" },
-  { id: 2, label: "Destinations", path: "/destinations" },
-  { id: 3, label: "Near Me", path: "/near-me" },
-  { id: 4, label: "Events", path: "/events" },
-  { id: 5, label: "Blog", path: "/blog" },
-  { id: 6, label: "Gallery", path: "/gallery" },
-  { id: 7, label: "About", path: "/about" },
-  { id: 8, label: "Contact Us", path: "/contact" },
+  { id: 1, label: "Home", path: "/", doesWork: true },
+  { id: 2, label: "Destinations", path: "/destinations", doesWork: true },
+  { id: 3, label: "Near Me", path: "/near-me", doesWork: false },
+  { id: 4, label: "Events", path: "/events", doesWork: false },
+  { id: 5, label: "Blog", path: "/blog", doesWork: false },
+  { id: 6, label: "Gallery", path: "/gallery", doesWork: false },
+  { id: 7, label: "About", path: "/about", doesWork: false },
+  { id: 8, label: "Contact Us", path: "/contact", doesWork: false },
 ];
 
 const toggleMenu = () => {

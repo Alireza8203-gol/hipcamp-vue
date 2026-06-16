@@ -8,7 +8,12 @@
 import MenuItem from "@/components/MenuItem.vue";
 
 defineProps<{
-  menuItemNames: { id: number; label: string; path: string }[];
+  menuItemNames: {
+    id: number;
+    label: string;
+    path: string;
+    doesWork: boolean;
+  }[];
 }>();
 </script>
 

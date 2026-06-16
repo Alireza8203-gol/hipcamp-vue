@@ -22,7 +22,12 @@ import UserLogIn from "@/components/UserLogIn.vue";
 
 const props = defineProps<{
   isMenuOpen: boolean;
-  menuItemNames: { id: number; label: string; path: string }[];
+  menuItemNames: {
+    id: number;
+    label: string;
+    path: string;
+    doesWork: boolean;
+  }[];
 }>();
 const emit = defineEmits<{
   (e: "toggleMenu", value: boolean): void;
