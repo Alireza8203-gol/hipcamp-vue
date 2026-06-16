@@ -85,7 +85,7 @@
   z-index: 2;
 }
 .newsletter__title {
-  max-width:;
+  /*max-width:;*/
   font-size: 4rem;
   line-height: 6rem;
   margin: 0 auto 2rem;

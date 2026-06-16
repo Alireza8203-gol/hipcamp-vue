@@ -16,7 +16,6 @@ const props = withDefaults(
     isDesktop: false,
   },
 );
-console.log(props.isDesktop);
 </script>
 
 <style scoped>

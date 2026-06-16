@@ -42,7 +42,7 @@ const toggleMobileMenu = () => {
   position: fixed;
   backdrop-filter: blur(12px);
   padding: 10rem 2.5rem 2.5rem;
-  //background-color: var(--app-bg);
+  /*background-color: var(--app-bg);*/
   transition: all 200ms ease-in-out;
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -74,7 +74,7 @@ const toggleMobileMenu = () => {
 
 @media (min-width: 380px) {
   .nav-menu {
-    //width: 26.5rem;
+    /*width: 26.5rem;*/
   }
 }
 

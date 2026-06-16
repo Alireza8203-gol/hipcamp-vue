@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { computed } from "vue";
-import { places } from "@/data/places.ts";
+import { destinations } from "@/data/destinations.ts";
 import DestinationCard from "@/components/DestinationCard.vue";
 
 const props = withDefaults(
@@ -34,9 +34,9 @@ const props = withDefaults(
 );
 const visiblePlaces = computed(() => {
   if (props.numberOfDestinations > 0) {
-    return places.slice(0, props.numberOfDestinations);
+    return destinations.slice(0, props.numberOfDestinations);
   } else {
-    return places;
+    return destinations;
   }
 });
 </script>
@@ -76,6 +76,7 @@ const visiblePlaces = computed(() => {
   font-family: var(--secondary-font), sans-serif;
 }
 .destinations__places {
+  gap: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   margin-left: -1.5rem;

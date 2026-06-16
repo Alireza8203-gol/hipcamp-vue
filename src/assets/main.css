@@ -188,6 +188,7 @@ table {
     width: 137rem;
   }
 }
+
 @media (min-width: 1570px) {
   .container {
     width: 153rem;

@@ -1,12 +1,10 @@
 <template>
   <Header />
-  <main class="main">
-    <RouterView v-slot="{ Component }">
-      <Transition mode="out-in" name="page">
-        <component :is="Component" />
-      </Transition>
-    </RouterView>
-  </main>
+  <RouterView v-slot="{ Component }">
+    <Transition mode="out-in" name="page">
+      <component :is="Component" />
+    </Transition>
+  </RouterView>
   <Footer />
 </template>
 

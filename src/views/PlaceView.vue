@@ -1,7 +1,14 @@
 <template>
-  <div class="container">
-    <h1>this is the place: {{ router.params.title }}</h1>
-  </div>
+  <main class="main">
+    <div class="container">
+      <section>
+        <div>
+          <img alt="" src="" />
+        </div>
+        <div></div>
+      </section>
+    </div>
+  </main>
 </template>
 
 <script lang="ts" setup>

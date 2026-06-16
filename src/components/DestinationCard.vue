@@ -64,10 +64,10 @@ const toggleLike = () => {
 
 <style scoped>
 .place {
+  text-align: center;
   width: 34rem;
   flex-grow: 1;
   padding: 4rem;
-  margin: 1.5rem;
   border-radius: 2rem;
   background-color: var(--white);
 }
@@ -98,7 +98,7 @@ const toggleLike = () => {
   stroke-width: 2px;
 }
 .place__like-icon--filled {
-  fill: #e76f51;
+  fill: var(--orange);
 }
 .place__price {
   left: 0;
