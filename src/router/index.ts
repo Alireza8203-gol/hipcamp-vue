@@ -50,6 +50,10 @@ const router = createRouter({
     //   component: () => import("../views/ContactUsView.vue"),
     // },
     {
+      path: "/under-development",
+      component: () => import("../views/UnderDevelopment.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       component: () => import("../views/404.vue"),
     },

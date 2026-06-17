@@ -7,22 +7,23 @@
           Book unique camping experiences on over 300,000 campsites, cabins, RV
           parks, public parks and more.
         </p>
-        <form action="" class="hero-content__form">
+        <div class="hero-content__form">
           <input
+            v-model="searchQuery"
             class="hero-content__input"
             placeholder="Search Destinations"
             type="text"
           />
-        </form>
+        </div>
       </div>
     </div>
     <!--    <div class="divider"></div>-->
     <div class="container">
       <div class="destinations__places">
         <DestinationCard
-          v-for="destination in visibleDestinations"
+          v-for="destination in filteredDestinations"
           :key="destination.id"
-          :place-info="destination"
+          :destination-info="destination"
         />
       </div>
     </div>
@@ -30,11 +31,28 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { destinations } from "@/data/destinations.ts";
+import { computed, ref } from "vue";
 import DestinationCard from "@/components/DestinationCard.vue";
+import { type Destination, destinations } from "@/data/destinations.ts";
 
-const visibleDestinations = ref(destinations);
+const searchQuery = ref<string>("");
+const destinationsArr = ref<Destination[] | []>(destinations);
+const filteredDestinations = computed(() => {
+  // console.log("query received", searchQuery.value);
+  if (!searchQuery.value) {
+    console.log("query empty");
+    return destinations;
+  }
+  console.log("query not empty");
+  return destinationsArr.value.filter((place) => {
+    console.log("filter is running");
+    return place.title.toLowerCase().includes(searchQuery.value.toLowerCase());
+  });
+});
+
+// const lookUpDestination = () => {
+//   console.log(searchQuery.value);
+// };
 </script>
 
 <style scoped>

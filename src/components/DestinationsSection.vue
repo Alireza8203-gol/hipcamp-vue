@@ -10,7 +10,7 @@
       <DestinationCard
         v-for="place in visiblePlaces"
         :key="place.id"
-        :place-info="place"
+        :destination-info="place"
       />
     </div>
     <RouterLink class="destinations__btn btn" to="/destinations">

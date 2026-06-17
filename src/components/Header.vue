@@ -129,7 +129,7 @@ const toggleMenu = () => {
 @media (min-width: 768px) {
   .header {
     backdrop-filter: blur(1.5rem);
-    -webkit-backdrop-filter: blur(1.5rem);
+    --webkit-backdrop-filter: blur(1.5rem);
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.55) 0%,

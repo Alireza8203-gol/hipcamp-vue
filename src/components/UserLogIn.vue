@@ -1,7 +1,7 @@
 <template>
   <div :class="`nav__links ${isDesktop ? 'hidden' : ''}`">
-    <RouterLink class="nav__link" to="/log-in">Sign Up</RouterLink>
-    <RouterLink class="nav__link nav__link--border" to="/log-in">
+    <RouterLink class="nav__link" to="/under-development">Sign Up</RouterLink>
+    <RouterLink class="nav__link nav__link--border" to="/under-development">
       Sign In
     </RouterLink>
   </div>

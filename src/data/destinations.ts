@@ -1300,3 +1300,4 @@ const destinations: Destination[] = [
 ];
 
 export { destinations };
+export type { Destination };

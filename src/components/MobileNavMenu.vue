@@ -45,11 +45,11 @@ const toggleMobileMenu = () => {
   z-index: 99;
   width: 25rem;
   position: fixed;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(1.2rem);
   padding: 10rem 2.5rem 2.5rem;
   /*background-color: var(--app-bg);*/
   transition: all 200ms ease-in-out;
-  -webkit-backdrop-filter: blur(12px);
+  /*-webkit-backdrop-filter: blur(12px);*/
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.8);
 }

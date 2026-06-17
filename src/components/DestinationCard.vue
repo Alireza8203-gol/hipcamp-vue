@@ -1,10 +1,10 @@
 <template>
   <div class="place">
     <div class="place__banner">
-      <RouterLink :to="`/destinations/${placeInfo.title}`">
+      <RouterLink :to="`/destinations/${destinationInfo.title}`">
         <img
-          :alt="placeInfo.title"
-          :src="`/Images/image${placeInfo.img}.webp`"
+          :alt="destinationInfo.title"
+          :src="`/Images/image${destinationInfo.img}.webp`"
           class="place__img"
         />
       </RouterLink>
@@ -27,15 +27,15 @@
         </svg>
       </div>
       <div class="place__price">
-        <p class="place__price-text">${{ placeInfo.price }}/night</p>
+        <p class="place__price-text">${{ destinationInfo.price }}/night</p>
       </div>
     </div>
-    <RouterLink :to="`/destinations/${placeInfo.title}`">
-      <h3 class="place__title">{{ placeInfo.title }}</h3>
+    <RouterLink :to="`/destinations/${destinationInfo.title}`">
+      <h3 class="place__title">{{ destinationInfo.title }}</h3>
     </RouterLink>
-    <p class="place__caption">{{ placeInfo.caption }}</p>
+    <p class="place__caption">{{ destinationInfo.caption }}</p>
     <RouterLink
-      :to="`/destinations/${placeInfo.title}`"
+      :to="`/destinations/${destinationInfo.title}`"
       class="place__link btn"
     >
       Read More
@@ -48,7 +48,7 @@ import { ref } from "vue";
 
 const isLiked = ref(false);
 const props = defineProps<{
-  placeInfo: {
+  destinationInfo: {
     id: number;
     img: string;
     price: number;
@@ -64,10 +64,11 @@ const toggleLike = () => {
 
 <style scoped>
 .place {
-  text-align: center;
   width: 34rem;
   flex-grow: 1;
   padding: 4rem;
+  max-width: 50rem;
+  text-align: center;
   border-radius: 2rem;
   background-color: var(--white);
 }
