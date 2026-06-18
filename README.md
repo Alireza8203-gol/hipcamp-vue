@@ -1,8 +1,11 @@
-# 🌲 HipCamp
+# 🌲 HIPCAMP
 
 A modern outdoor travel platform built with Vue and TypeScript, designed to help users discover nature-based destinations, cabins, camper vans, and unique outdoor experiences.
 
-HipCamp aims to make finding your next adventure simple, enjoyable, and inspiring. Whether you're looking for a peaceful cabin in the woods or planning a weekend camping trip, HipCamp is being built to become a central hub for outdoor exploration.
+HIPCAMP aims to make finding your next adventure simple, enjoyable, and inspiring. Whether you're looking for a 
+peaceful 
+cabin in the woods or planning a weekend camping trip, HIPCAMP is being built to become a central hub for outdoor 
+exploration.
 
 ## 🚀 Live Demo
 

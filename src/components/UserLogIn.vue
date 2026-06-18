@@ -20,8 +20,10 @@ const props = withDefaults(
 
 <style scoped>
 .nav__links {
+  gap: 1rem;
   display: flex;
   flex-flow: column;
+  border-radius: 5rem;
 }
 .nav__link {
   flex-grow: 1;
@@ -29,16 +31,12 @@ const props = withDefaults(
   margin: 1rem 0;
   display: block;
   text-align: center;
-  color: var(--text--dark);
-}
-.nav__link--border {
   border-radius: 5rem;
+  color: var(--text--dark);
+  transition: all 150ms ease-in;
   border: 1px solid var(--text--dark);
 }
-/*
-  TODO: Make a better hover background color for sign in button in desktop breakpoint
-*/
-.nav__link--border:hover {
+.nav__link:hover {
   color: var(--text--dark);
   background-color: var(--white);
   transition: all 150ms ease-in-out;
@@ -47,26 +45,23 @@ const props = withDefaults(
   display: none;
 }
 
-@media (min-width: 768px) {
-}
 @media (min-width: 992px) {
   .nav__links {
     display: flex;
     flex-flow: row;
+    border-color: var(--white);
+    border: 1px solid var(--white);
   }
   .nav__link {
+    border: none;
     margin-top: 0;
-    padding-left: 0;
     margin-bottom: 0;
-    padding-right: 0;
-    margin-left: 3rem;
+    padding: 1rem 3rem;
     color: var(--white);
     font-family: var(--primary-font-md), sans-serif;
   }
   .nav__link--border {
-    padding: 1rem 3rem;
     border-radius: 10rem;
-    border: 1px solid var(--white);
     transition: all 150ms ease-in-out;
   }
 }

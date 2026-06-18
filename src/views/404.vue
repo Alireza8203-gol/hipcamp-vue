@@ -6,8 +6,10 @@
       loading="lazy"
       src="/Images/not-found.webp"
     />
-    <h1 class="not-found__title">404</h1>
-    <h2 class="not-found__subtitle">Oops, this page doesn’t exist.</h2>
+    <h1 class="not-found__title">Oops, looks like you're lost!</h1>
+    <h2 class="not-found__subtitle">
+      The page you're looking for doesn't exist or may have been removed
+    </h2>
     <RouterLink class="btn btn--orange" to="/"> Go back home </RouterLink>
   </div>
 </template>
@@ -26,17 +28,17 @@
   width: min(50rem, 90%);
 }
 .not-found__title {
-  margin-bottom: 1.25rem;
-  font-size: 1.875rem;
+  font-size: 2.6rem;
   text-align: center;
+  margin-bottom: 1.25rem;
 }
 .not-found__subtitle {
-  font-size: 2.6rem;
+  font-size: 2rem;
   text-align: center;
 }
 .btn--orange {
+  padding: 0 2rem;
   margin-top: 2rem;
   background-color: var(--orange);
-  padding: 0 2rem;
 }
 </style>

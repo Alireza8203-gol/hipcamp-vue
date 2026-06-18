@@ -8,7 +8,7 @@
         @click="toggleMobileMenu"
       />
     </ul>
-    <UserLogIn />
+    <UserLogIn @click="toggleMobileMenu" />
   </div>
   <div
     :class="`overlay ${isMenuOpen ? 'overlay--visible' : 'overlay--invisible'}`"

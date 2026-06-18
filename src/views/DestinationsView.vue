@@ -4,7 +4,7 @@
       <div class="hero-content">
         <h1 class="hero-content__title">Explore Destinations And Activities</h1>
         <p class="hero-content__caption">
-          Book unique camping experiences on over 300,000 campsites, cabins, RV
+          Book unique camping experiences on over 48,000 campsites, cabins, RV
           parks, public parks and more.
         </p>
         <div class="hero-content__form">
@@ -13,19 +13,26 @@
             class="hero-content__input"
             placeholder="Search Destinations"
             type="text"
+            @keyup="doThis"
           />
         </div>
       </div>
     </div>
     <!--    <div class="divider"></div>-->
     <div class="container">
-      <div class="destinations__places">
+      <div v-if="filteredDestinations.length" class="destinations__places">
         <DestinationCard
           v-for="destination in filteredDestinations"
           :key="destination.id"
           :destination-info="destination"
         />
       </div>
+      <p
+        v-if="searchQuery && filteredDestinations.length === 0"
+        class="no-match-message"
+      >
+        No match found :(
+      </p>
     </div>
   </main>
 </template>
@@ -38,21 +45,17 @@ import { type Destination, destinations } from "@/data/destinations.ts";
 const searchQuery = ref<string>("");
 const destinationsArr = ref<Destination[] | []>(destinations);
 const filteredDestinations = computed(() => {
-  // console.log("query received", searchQuery.value);
   if (!searchQuery.value) {
-    console.log("query empty");
     return destinations;
   }
-  console.log("query not empty");
   return destinationsArr.value.filter((place) => {
-    console.log("filter is running");
     return place.title.toLowerCase().includes(searchQuery.value.toLowerCase());
   });
 });
 
-// const lookUpDestination = () => {
-//   console.log(searchQuery.value);
-// };
+const doThis = () => {
+  console.log(filteredDestinations.value);
+};
 </script>
 
 <style scoped>
@@ -121,6 +124,12 @@ const filteredDestinations = computed(() => {
   height: 1px;
   margin: 5rem auto;
   background-color: var(--orange);
+}
+.no-match-message {
+  font-size: 4rem;
+  margin-top: 10rem;
+  text-align: center;
+  font-family: var(--primary-font), sans-serif;
 }
 
 @media (min-width: 376px) {
