@@ -15,9 +15,9 @@ const router = createRouter({
       component: () => import("../views/DestinationsView.vue"),
     },
     {
-      path: "/destinations/:title",
-      name: "place",
-      component: () => import("../views/UnderDevelopment.vue"),
+      path: "/destinations/:id",
+      name: "destination details",
+      component: () => import("../views/DestinationDetailsView.vue"),
     },
     {
       path: "/near-me",

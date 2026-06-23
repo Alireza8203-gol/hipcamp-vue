@@ -242,6 +242,7 @@ a {
   height: 5vh;
   display: flex;
   font-size: 2vh;
+  cursor: pointer;
   max-width: 20vh;
   margin-left: auto;
   margin-right: auto;

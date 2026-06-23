@@ -1,4 +1,4 @@
-interface DestinationOptions {
+interface DestinationAmenities {
   kitchen: boolean;
   wifi: boolean;
   tv: boolean;
@@ -19,7 +19,7 @@ interface DestinationDetails {
   beds: number;
   baths: number;
   description: string;
-  options: DestinationOptions;
+  amenities: DestinationAmenities;
 }
 
 interface Destination {
@@ -49,7 +49,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Escape city life and enjoy peaceful mornings in this charming forest retreat.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -79,7 +79,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "A spacious lakeside cabin perfect for fishing, kayaking, and family gatherings.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -109,7 +109,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Ideal for solo travelers and couples looking for a quiet escape.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: false,
         tv: false,
@@ -139,7 +139,7 @@ const destinations: Destination[] = [
       baths: 3,
       description:
         "A premium mountain lodge featuring panoramic views and modern comforts.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -168,7 +168,7 @@ const destinations: Destination[] = [
       beds: 2,
       baths: 1,
       description: "Enjoy river walks, campfires, and starry nights.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: false,
@@ -198,7 +198,7 @@ const destinations: Destination[] = [
       beds: 3,
       baths: 1,
       description: "Disconnect from distractions and reconnect with nature.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -229,7 +229,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "An excellent family getaway with plenty of outdoor activities nearby.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -260,7 +260,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Perfect for budget-conscious travelers seeking a simple adventure.",
-      options: {
+      amenities: {
         kitchen: false,
         wifi: false,
         tv: false,
@@ -291,7 +291,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "A luxurious chalet with breathtaking views and premium amenities.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -321,7 +321,7 @@ const destinations: Destination[] = [
       beds: 2,
       baths: 1,
       description: "A warm and welcoming cabin near scenic hiking trails.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -351,7 +351,7 @@ const destinations: Destination[] = [
       beds: 3,
       baths: 2,
       description: "A beautiful retreat offering privacy and tranquility.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -381,7 +381,7 @@ const destinations: Destination[] = [
       beds: 1,
       baths: 1,
       description: "Romantic, cozy, and surrounded by beautiful birch trees.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: false,
@@ -411,7 +411,7 @@ const destinations: Destination[] = [
       beds: 6,
       baths: 3,
       description: "Large lodge with incredible scenery and modern facilities.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -442,7 +442,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "A relaxing destination for travelers who love nature and serenity.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -472,7 +472,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Enjoy quiet mornings, scenic trails, and cozy evenings in this charming forest retreat.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -502,7 +502,7 @@ const destinations: Destination[] = [
       baths: 3,
       description:
         "An upscale chalet designed for travelers seeking comfort, adventure, and unforgettable scenery.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -532,7 +532,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Spend your evenings under the stars and your days exploring nearby wilderness.",
-      options: {
+      amenities: {
         kitchen: false,
         wifi: false,
         tv: false,
@@ -562,7 +562,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Perfect for families looking to enjoy fishing, boating, and relaxing by the water.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -592,7 +592,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Experience the beauty of nature while enjoying all the comforts of home.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: false,
@@ -622,7 +622,7 @@ const destinations: Destination[] = [
       baths: 4,
       description:
         "A large lodge featuring expansive living spaces and beautiful outdoor areas.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -652,7 +652,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Enjoy breathtaking sunsets and peaceful surroundings from your private deck.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -682,7 +682,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Listen to the soothing sounds of flowing water while enjoying a comfortable stay.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: false,
@@ -712,7 +712,7 @@ const destinations: Destination[] = [
       baths: 4,
       description:
         "Designed for travelers who appreciate exceptional comfort and incredible views.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -742,7 +742,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "An ideal destination for hiking, wildlife watching, and relaxing in nature.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -772,7 +772,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "A modern lodge offering comfort, privacy, and unforgettable sunrise views.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -802,7 +802,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Disconnect from the hustle and bustle while enjoying nature's tranquility.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: false,
         tv: false,
@@ -832,7 +832,7 @@ const destinations: Destination[] = [
       baths: 3,
       description:
         "A luxurious retreat ideal for families and groups seeking adventure.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -862,7 +862,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "A cozy cottage offering the perfect balance between comfort and nature.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -892,7 +892,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Surrounded by majestic trees and fresh mountain air, this cabin offers the perfect escape from everyday life.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -922,7 +922,7 @@ const destinations: Destination[] = [
       baths: 3,
       description:
         "Enjoy unforgettable mountain scenery, spacious living areas, and top-tier amenities.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -952,7 +952,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Perfect for nature lovers looking for a peaceful and affordable outdoor adventure.",
-      options: {
+      amenities: {
         kitchen: false,
         wifi: false,
         tv: false,
@@ -982,7 +982,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Spend your days kayaking, fishing, or simply relaxing by the water's edge.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1012,7 +1012,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Enjoy slow mornings, fresh air, and beautiful natural surroundings.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: false,
@@ -1042,7 +1042,7 @@ const destinations: Destination[] = [
       baths: 5,
       description:
         "A premium estate featuring spacious interiors, breathtaking views, and exceptional comfort.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1072,7 +1072,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Relax on the deck, listen to the river flow, and reconnect with nature.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1102,7 +1102,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "A peaceful retreat ideal for couples and solo travelers seeking quiet relaxation.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: false,
         tv: false,
@@ -1132,7 +1132,7 @@ const destinations: Destination[] = [
       baths: 3,
       description:
         "An upscale retreat offering dramatic views and exceptional amenities.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1162,7 +1162,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "A quiet destination where guests can unwind and enjoy the sounds of nature.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1192,7 +1192,7 @@ const destinations: Destination[] = [
       baths: 3,
       description:
         "Whether skiing in winter or hiking in summer, this chalet offers the perfect base.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1222,7 +1222,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Perfect for travelers seeking a cozy stay surrounded by nature.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: false,
@@ -1252,7 +1252,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Featuring breathtaking lake views and modern amenities for a memorable stay.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1282,7 +1282,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Enjoy nature at its finest with easy access to trails, waterfalls, and wildlife.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1312,7 +1312,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Nestled beneath towering pines, this cozy lodge offers quiet evenings, scenic hiking trails, and beautiful stargazing opportunities.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1342,7 +1342,7 @@ const destinations: Destination[] = [
       baths: 5,
       description:
         "Designed for large groups and special occasions, this premium property combines luxury, privacy, and breathtaking scenery.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1372,7 +1372,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Perfect for backpackers and outdoor enthusiasts looking for a budget-friendly stay close to nature.",
-      options: {
+      amenities: {
         kitchen: false,
         wifi: false,
         tv: false,
@@ -1402,7 +1402,7 @@ const destinations: Destination[] = [
       baths: 2,
       description:
         "Enjoy modern comforts while staying immersed in nature, with nearby trails and stunning landscapes.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,
@@ -1432,7 +1432,7 @@ const destinations: Destination[] = [
       baths: 1,
       description:
         "Wake up to birdsong and scenic views in this charming rural escape, ideal for couples and small families.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: false,
@@ -1462,7 +1462,7 @@ const destinations: Destination[] = [
       baths: 3,
       description:
         "A premium mountain getaway offering spacious living areas, luxurious amenities, and easy access to outdoor adventures.",
-      options: {
+      amenities: {
         kitchen: true,
         wifi: true,
         tv: true,

@@ -35,7 +35,7 @@
     </RouterLink>
     <p class="place__caption">{{ destinationInfo.caption }}</p>
     <RouterLink
-      :to="`/destinations/${destinationInfo.title}`"
+      :to="`/destinations/${destinationInfo.id}`"
       class="place__link btn"
     >
       Read More
