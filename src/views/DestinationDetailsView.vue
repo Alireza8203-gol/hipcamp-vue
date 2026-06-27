@@ -2,7 +2,8 @@
   <main class="main">
     <div class="container">
       <section class="destination__hero">
-        <img alt="" class="destination__image" src="/Images/hero-bg.webp" />
+        <!--        <img alt="" class="destination__image" src="/Images/hero-bg.webp" />-->
+        <CustomCarousel />
 
         <div class="destination__hero-content">
           <h1 class="destination__title">{{ destinationDetails?.title }}</h1>
@@ -156,8 +157,8 @@
               {{ destinationDetails?.price }}
               <span class="destination__booking-period">/ night</span>
             </p>
-
-            <button class="btn destination__booking-btn">Reserve Now</button>
+            <CustomDatePicker />
+            <button class="destination__booking-btn">Reserve Now</button>
           </div>
         </aside>
       </div>
@@ -168,6 +169,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import CustomCarousel from "@/components/CustomCarousel.vue";
 import { type Destination, destinations } from "@/data/destinations.ts";
 import {
   AirVent,
@@ -186,6 +188,7 @@ import {
   Wifi,
   WindIcon,
 } from "@lucide/vue";
+import CustomDatePicker from "@/components/CustomDatePicker.vue";
 
 const route = useRoute();
 const destinationDetails = ref<Destination>();
@@ -194,11 +197,10 @@ onMounted(() => {
   destinationDetails.value = destinations.find((destination) => {
     return route.params.id == destination.id.toString();
   });
-  console.log(destinationDetails.value);
 });
 </script>
 
-<style scoped>
+<style>
 .destination__hero {
   overflow: hidden;
   margin-top: 12rem;
@@ -206,139 +208,228 @@ onMounted(() => {
   margin-bottom: 3rem;
   border-radius: 1.5rem;
 }
+
 .destination__image {
   width: 100%;
-  height: 50rem;
+  height: 350px;
   display: block;
   object-fit: cover;
   border-radius: 2rem;
 }
+
+.destination__hero-content {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem;
+  position: absolute;
+  border-radius: 0 0 2rem 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+}
+
 .destination__title {
-  font-size: 3rem;
+  color: #fff;
+  font-size: 2rem;
   margin-bottom: 0.75rem;
-  color: var(--text--dark);
   font-family: var(--primary-font), sans-serif;
 }
+
 .destination__meta {
   gap: 1.5rem;
   display: flex;
   font-size: 1.1rem;
-  color: var(--text--dark);
+  color: rgba(255, 255, 255, 0.85);
 }
+
 /* LAYOUT */
 .destination__container {
   gap: 3rem;
   display: grid;
-  grid-template-columns: 1fr 32rem;
+  grid-template-columns: 1fr;
 }
+
+/* SECTION TITLES */
+.destination__section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.destination__section-title::after {
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  content: "";
+  width: 2.5rem;
+  position: absolute;
+  border-radius: 2px;
+  background-color: var(--orange);
+}
+
 /* CONTENT */
 .destination__description p {
   color: #555;
   line-height: 1.8;
 }
+
 /* STATS */
 .destination__stats {
   gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 2rem;
+  grid-template-columns: repeat(2, 1fr);
 }
+
 .destination__stat {
   padding: 1.5rem;
   text-align: center;
   border-radius: 1rem;
-  border: 1px solid var(--dark-grey);
+  background-color: var(--white);
+  border: 1px solid var(--light-grey);
+  border-left: 3px solid transparent;
+  transition:
+    border-color 200ms ease,
+    border-left-color 200ms ease;
 }
+
+.destination__stat:hover {
+  border-left-color: var(--orange);
+  background-color: var(--secondary-color);
+}
+
 .destination__stat-value {
   display: block;
   font-weight: 700;
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
+  color: var(--text--dark);
 }
+
 .destination__stat-label {
-  gap: 1rem;
-  color: #666;
+  gap: 0.4rem;
   display: flex;
+  font-size: 0.9rem;
   align-items: center;
+  color: var(--dark-grey);
   justify-content: center;
 }
+
 /* AMENITIES */
 .destination__amenities-list {
   gap: 1rem;
   display: grid;
   list-style: none;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
 }
+
 .destination__amenity {
-  gap: 1rem;
+  gap: 0.75rem;
   padding: 1rem;
   display: flex;
   align-items: center;
-  justify-items: center;
   border-radius: 0.75rem;
+  color: var(--text--dark);
+  background-color: var(--white);
   border: 1px solid var(--light-grey);
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
 }
+
+.destination__amenity:hover {
+  color: var(--orange);
+  border-color: var(--orange);
+  background-color: var(--secondary-color);
+}
+
 /* BOOKING */
 .destination__booking {
   position: relative;
 }
+
 .destination__booking-card {
-  top: 2rem;
+  gap: 2rem;
+  display: flex;
   padding: 2rem;
-  position: sticky;
+  position: static;
+  align-items: center;
   border-radius: 1.5rem;
+  flex-direction: column;
   border: 1px solid #e5e5e5;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--orange);
+  background-color: var(--secondary-color);
+  box-shadow: 0 10px 30px rgba(231, 111, 81, 0.1);
 }
+
 .destination__booking-price {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-.destination__booking-period {
+  align-self: start;
   color: var(--text--dark);
-  font-size: 1rem;
-  font-weight: 400;
 }
+
+.destination__booking-period {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--dark-grey);
+}
+
 .destination__booking-btn {
-  margin: 0;
   width: 100%;
+  color: #fff;
   border: none;
-  //padding: 0 3rem;
-  font-weight: 400;
-  font-size: 1.3rem;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.5rem;
   border-radius: 0.75rem;
-  transition: transform 150ms ease-in;
+  background: linear-gradient(135deg, var(--orange) 0%, #d4593c 100%);
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
 }
+
 .destination__booking-btn:hover {
-  transform: scale(105%);
-  transition: transform 150ms ease-in;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(231, 111, 81, 0.4);
 }
 
 /* TABLET */
-@media (max-width: 900px) {
-  .destination__container {
-    grid-template-columns: 1fr;
-  }
-  .destination__booking-card {
-    position: static;
-  }
-}
-/* MOBILE */
-@media (max-width: 600px) {
-  .destination {
-    padding: 1rem;
-  }
+@media (min-width: 600px) {
   .destination__image {
-    height: 350px;
+    height: 50rem;
   }
+
   .destination__title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
+
   .destination__stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .destination__amenities-list {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+  .destination__container {
+    grid-template-columns: 1fr 32rem;
+  }
+
+  .destination__booking-card {
+    top: 2rem;
+    position: sticky;
+  }
+}
+
+@media (min-width: 1200px) {
   .destination__amenities-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 </style>
